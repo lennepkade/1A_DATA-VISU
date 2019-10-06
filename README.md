@@ -1,6 +1,6 @@
 # Comment représenter les données spatiales ?
 
-Pour rappel, le TD d'introduction sur la collecte de données est en ligne à cette adresse : [https://github.com/lennepkade/1A_DATA-COLLECT](https://github.com/lennepkade/1A_DATA-COLLECT)
+Pour rappel, le TD d'introduction sur la collecte de données est en ligne à cette adresse : [https://github.com/nkarasiak/1A_DATA-COLLECT](https://github.com/nkarasiak/1A_DATA-COLLECT)
 
 Le SIG est outil qui permet de traiter les données spatiales mais aussi de réaliser des cartes. Pour ce faire, deux modes de représentation des données sont utilisés par ces logiciels :  
 
@@ -18,7 +18,7 @@ Ces données ont obligatoirement :
 
 L'objectif de ce TD est de vous faire produire des cartes en respectant la sémiologie graphique, c'est-à-dire les règles graphiques à respecter pour bien représenter votre donnée.
 
-Les données utilisées pour ce TD sont disponibles à cette adresse : [https://github.com/lennepkade/1A_DATA-VISU/archive/docs.zip](https://github.com/lennepkade/1A_DATA-VISU/archive/docs.zip).
+Les données utilisées pour ce TD sont disponibles à cette adresse : [https://github.com/nkarasiak/1A_DATA-VISU/archive/docs.zip](https://github.com/nkarasiak/1A_DATA-VISU/archive/docs.zip).
 
 
 ## Les grands types de données à représenter
