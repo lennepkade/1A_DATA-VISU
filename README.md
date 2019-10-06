@@ -70,7 +70,7 @@ Une fois ces manipulations effectuées, vous pouvez sauvegarder votre projet dan
 
 Pour ce TD, il est fourni un fichier vectoriel de type polygone où sont numérisées 10 parcelles de l'exploitation de Borret : `parcelles_borret.gpkg`.
 
-En plus des parcelles, 2 fichiers de type `csv` vous sont fournis : 
+En plus des parcelles, 2 fichiers de type `csv` vous sont fournis, ils contiennent des données à intégrer aux parcelles  : 
 
  - `assolement_2018.csv`, la liste par parcelle de ce qui a été récolté en 2018
  - `production.csv`, la production (qt/ha) par type de culture
