@@ -1,6 +1,6 @@
 # Visualisation de la donnée
 
-Pou rappel, le TD d'introduction sur la collecte de données est en ligne à cette adresse : [https://github.com/lennepkade/1A_DATA-COLLECT](https://github.com/lennepkade/1A_DATA-COLLECT)
+Pour rappel, le TD d'introduction sur la collecte de données est en ligne à cette adresse : [https://github.com/lennepkade/1A_DATA-COLLECT](https://github.com/lennepkade/1A_DATA-COLLECT)
 
 Petit rappel de l'introduction du TD précédent : le SIG est outil qui permet aussi de réaliser des cartes. Pour ce faire, deux modes de représentation des données sont utilisés par ces logiciels :  
 
@@ -216,7 +216,7 @@ Tout d'abord, nous connaissons la production à l'hectare selon le type de cultu
 - Ouvrir la calculatrice de champ (ctrl+i pour les geeks)
 - Cocher `Créer un nouveau champ`
 - Nom : 'prod_totale'
-- La formule à saisir est :  `$area/10000 *  "production_prod"`. Mais attention, dans le cas présenté, la colonne contenant la production à l'hectare par type de culture s'appelle *"production_prod"*, pensez à bien utiliser l'outil d'aide à la création d'expression pour retrouver le nom de votre colonne dans la partie `Champs et valeurs` (image ci-dessus)
+- La formule à saisir est :  $area/10000 *  "production_prod"$ . Mais attention, dans le cas présenté, la colonne contenant la production à l'hectare par type de culture s'appelle *"production_prod"*, pensez à bien utiliser l'outil d'aide à la création d'expression pour retrouver le nom de votre colonne dans la partie `Champs et valeurs` (image ci-dessus)
 
 `$area` représente la surface du polygone selon l'unité de mesure de la projection utilisée, comme nous utilisons du Lambert-93 (EPSG:2154), l'unité est le mètre. Donc pour calculer en hectare, nous divisons par 10 000 la surface que nous multiplions aussi par la production à l'hectare.
 
@@ -294,13 +294,16 @@ La couche de couverture est la couche pour laquelle chaque entité sera utilisé
 
 Une fois l'atlas créé, sélectionner votre carte principale (et pas celle de la localisation des parcelles), aller dans `Propriétés des objets` et cocher la partie `Contrôlé par l'atlas`. Vous pouvez désormais demander à générer votre atlas en cliquant sur le bouton `Aperçu de l'atlas`.
 
-![Aperçu de l'atlas](figures/generate_atlas.png)
+![Aperçu de l'atlas](figures/generate_atlas.png){height=60px}
 
 Pour ajouter des valeurs (textuelles ou numériques) en fonction de votre parcelle (comme la production en qt), ajouter un champ texte (icône texte sur la gauche), cocher la case `Rendu en html` puis cliquer sur `Insérer une expression...`.
 
 Ainsi, il ne sera plus obligatoire d'utiliser la fonction `concat` car chaque variable sera mise entre crochets et entre %, comme par exemple :
 
-`En 2018, la parcelle n° [% "id_parcelle" %] a produit  [% "prod_totale" %]qt de [% "assolement_2018_type" %]`
+```
+En 2018, la parcelle n [% "id_parcelle" %] a produit  [% "prod_totale" %] qt de [% "assolement_2018_type" %]
+
+```
 
 Votre atlas sera donc composé de 10 cartes, dont l'une sera du style : 
 
