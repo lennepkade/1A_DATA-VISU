@@ -1,8 +1,8 @@
-# Visualisation de la donnée
+# Comment représenter les données spatiales ?
 
 Pour rappel, le TD d'introduction sur la collecte de données est en ligne à cette adresse : [https://github.com/lennepkade/1A_DATA-COLLECT](https://github.com/lennepkade/1A_DATA-COLLECT)
 
-Petit rappel de l'introduction du TD précédent : le SIG est outil qui permet aussi de réaliser des cartes. Pour ce faire, deux modes de représentation des données sont utilisés par ces logiciels :  
+Le SIG est outil qui permet de traiter les données spatiales mais aussi de réaliser des cartes. Pour ce faire, deux modes de représentation des données sont utilisés par ces logiciels :  
 
 - Mode **vecteur** (représentation objet fondée sur des points, lignes, polygones)
 - Mode **raster** ou **image** (représentation matricielle avec partition complète de l'espace)
@@ -17,6 +17,8 @@ Ces données ont obligatoirement :
 2. des coordonnées issues du système précédent (en lat/long ou en mètres)
 
 L'objectif de ce TD est de vous faire produire des cartes en respectant la sémiologie graphique, c'est-à-dire les règles graphiques à respecter pour bien représenter votre donnée.
+
+Les données utilisées pour ce TD sont disponibles à cette adresse : [https://github.com/lennepkade/1A_DATA-VISU/archive/docs.zip](https://github.com/lennepkade/1A_DATA-VISU/archive/docs.zip).
 
 
 ## Les grands types de données à représenter
@@ -35,10 +37,7 @@ L'objectif de ce TD est de vous faire produire des cartes en respectant la sémi
 
 Une information qualitative sur un point : un symbôle/icône. : 
 
-![Aperçu de la sémiologie ponctuelle de la carte de l'IGN](figures/examples_ponctuel_ign.png)
-
-
-
+![Aperçu de la sémiologie ponctuelle de la carte de l'IGN](figures/examples_ponctuel_ign.png){height=100px}
 
 
 # Créer un nouveau projet QGIS
@@ -95,13 +94,17 @@ Il s'agit de représenter une information qualitative, donc chaque parcelle aura
 
 Clic droit > Propriété de la couche > Étiquettes
 
-![Étiquetter les parcelles](figures/etiquette_parcelle.png){height=100px}
+![Étiquetter les parcelles](figures/etiquette_parcelle.png)
 
 Dans étiquettes simples, choisissez le champs content l'identifiant de la parcelle. N'hésitez pas à changer la police, à ajouter un ombre pour mieux voir la police par exemple.
 
 Si vous voulez ajouter en plus du numéro de la parcelle, un texte qui indique 'Parcelle n', il vous faut alors **concatener** deux textes comme suit : 
 
+```
+
 `concat('Parcelle n',"id_parcelle")`
+
+```
 
 Attention à bien mettre des guillemets simples pour ajouter du texte, les double guillemets (") sont utilisés pour nommer les champs (comme ici le champs `id_parcelle`).
 
@@ -110,7 +113,7 @@ Attention à bien mettre des guillemets simples pour ajouter du texte, les doubl
 
 ### Couleur (symbologie)
 
-![Liste des symbologies](figures/symbologie.png){height=150px}
+![Liste des symbologies](figures/symbologie.png){height=100px}
 
 Dans l'onglet symbologie, sélectionner dans la liste Catégorisé.
 
@@ -216,7 +219,12 @@ Tout d'abord, nous connaissons la production à l'hectare selon le type de cultu
 - Ouvrir la calculatrice de champ (ctrl+i pour les geeks)
 - Cocher `Créer un nouveau champ`
 - Nom : 'prod_totale'
-- La formule à saisir est :  $area/10000 *  "production_prod"$ . Mais attention, dans le cas présenté, la colonne contenant la production à l'hectare par type de culture s'appelle *"production_prod"*, pensez à bien utiliser l'outil d'aide à la création d'expression pour retrouver le nom de votre colonne dans la partie `Champs et valeurs` (image ci-dessus)
+- La formule à saisir est :  
+```
+$area/10000 *  "production_prod"$
+```
+
+Mais attention, dans le cas présenté, la colonne contenant la production à l'hectare par type de culture s'appelle *"production_prod"*, pensez à bien utiliser l'outil d'aide à la création d'expression pour retrouver le nom de votre colonne dans la partie `Champs et valeurs` (image ci-dessus)
 
 `$area` représente la surface du polygone selon l'unité de mesure de la projection utilisée, comme nous utilisons du Lambert-93 (EPSG:2154), l'unité est le mètre. Donc pour calculer en hectare, nous divisons par 10 000 la surface que nous multiplions aussi par la production à l'hectare.
 
@@ -231,7 +239,9 @@ Vous pouvez afficher plusieurs informations dans une étiquette comme le type d'
 #### Afficher le type et la production en étiquette
 
 Dans l'étiquette, saisir l'expression suivante : 
+```
 `concat("assolement_2018_type",'\n', "prod_totale",'qt')`
+```
 
 Pour vous familiariser avec l'outil, vous pouvez remplacer la production totale par la production à l'ha et afficher une étiquette sous la forme : `Maïs : 89qt/ha`
 
@@ -275,9 +285,6 @@ Sélectionner cette nouvelle carte, puis dans `Propriétés de l'objet` , aller 
 Pour avoir un style différent de votre carte principale (celle des parcelles) il faudra faire des allers-retours entre le composeur d'impression et QGIS. Par exemple dans la fenêtre principale de QGIS, mettez juste un fond de type OpenStreetMap par dessus l'ensemble des couches (et désactivez les couches que vous ne voulez pas voir comme vos parcelles), puis retourner dans le composeur pour `Verrouiller les couches` de votre carte de localisation (dans l'onglet `Propriétés de l'objet`). Ainsi que vous remettrez dans le canvas principal de QGIS votre carte des parcelles, l'aperçu de votre petite carte ne se mettra pas à jour à gardera uniquement l'ancienne configuration.
 
 ![Carte avec localisation de la zone d'étude en utilisant des couches différentes](figures/map_withloc.png)
-
-
-
 
 
 # Génération d'un atlas
