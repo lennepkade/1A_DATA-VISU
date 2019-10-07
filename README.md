@@ -147,10 +147,14 @@ Pour ajouter la carte que vous venez de réaliser dans Qgis, cliquez sur l'icôn
 
 Vous pouvez déplacer le contenu de la carte en utilisant l'icône avec les flêches qui vont dans les 4 sens.
 
+
+
 Enfin, si l'emprise de votre carte ne vous satisfait pas, le plus simple est de retourner dans la fenêtre principal de Qgis puis : 
 clic droit sur les parcelles, et choisissez "Zommer sur la couche".
 
-Puis dans le composeur, cliquer sur l'icône `Set Map Extent to Match Main Canvas Extent` pour que votre carte utilise la même emprise que l'emprise de la fenêtre principale de QGIS.
+À partir Qgis 3.8, sélectionner votre carte puis cliquer sur l'icône `Set Map Extent to Match Main Canvas Extent` pour que votre carte utilise la même emprise que l'emprise de la fenêtre principale de QGIS.
+
+Dans les version inférieures de Qgis, dans `Propriétés de l'objet`, déployer la partie `Emprise` puis cliquer sur `Fixer sur l'emprise courante du canevas de carte`.
 
 ![Étendue de la carte QGIS](figures/composer_mapExtent.png).
 
@@ -158,7 +162,7 @@ Vous pouvez ajouter plusieurs textes :
 - un titre
 - les crédits (qui a fait la carte et avec des données de quelles sources ?).
 
-Et n'oubliez pas d'ajouter une légende (icône légende) et une flêche nord (icône fléche nord).
+Et n'oubliez pas d'ajouter une légende (icône légende) et une flèche nord (icône fléche nord). Si vous n'avez pas d'icône flèche du nord (cet icône est présent à partir de la version de Qgis 3.8), il vous faut ajouter une image, puis déployer la partie `Recherche dans les repertoires` et enfin sélectionner votre flèche nord préférée.
 
 
 Quand la carte vous convient, faites `Mise en page > Exporter au format PDF`, `image` ou `SVG` selon l'utilisation voulue.
