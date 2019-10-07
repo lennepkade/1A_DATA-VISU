@@ -2,21 +2,11 @@
 
 Pour rappel, le TD d'introduction sur la collecte de données est en ligne à cette adresse : [https://github.com/nkarasiak/1A_DATA-COLLECT](https://github.com/nkarasiak/1A_DATA-COLLECT)
 
-Le SIG est outil qui permet de traiter les données spatiales mais aussi de réaliser des cartes. Pour ce faire, deux modes de représentation des données sont utilisés par ces logiciels :  
+## Objectif du TD
 
-- Mode **vecteur** (représentation objet fondée sur des points, lignes, polygones)
-- Mode **raster** ou **image** (représentation matricielle avec partition complète de l'espace)
+L'objectif de ce TD est de vous faire produire des cartes selon la sémiologie graphique en vigueur, c'est-à-dire les règles graphiques à respecter pour bien représenter vos données.
 
-![Différence entre vecteur (à gauche) et raster (à droite)](figures/icon_vector-raster.jpg)
-
-Ces données ont obligatoirement :
-
-1. un système de coordonnées : 
-	* il peut s'agir d'un système de coordonnées projetées (ex. Lambert-93 ou code EPSG:2154 pour la France, liée au système géodésique RGF-93) 
-	* il peut s'agir d'un système de coordonnées géographiques (ex. WGS-84 ou code EPSG:4326 pour le monde)
-2. des coordonnées issues du système précédent (en lat/long ou en mètres)
-
-L'objectif de ce TD est de vous faire produire des cartes en respectant la sémiologie graphique, c'est-à-dire les règles graphiques à respecter pour bien représenter votre donnée.
+## Télécharger les données
 
 Les données utilisées pour ce TD sont disponibles à cette adresse : [https://github.com/nkarasiak/1A_DATA-VISU/archive/docs.zip](https://github.com/nkarasiak/1A_DATA-VISU/archive/docs.zip).
 
