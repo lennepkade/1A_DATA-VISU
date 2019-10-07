@@ -11,7 +11,7 @@ L'objectif de ce TD est de vous faire produire des cartes selon la sémiologie g
 Les données utilisées pour ce TD sont disponibles à cette adresse : [https://github.com/nkarasiak/1A_DATA-VISU/archive/docs.zip](https://github.com/nkarasiak/1A_DATA-VISU/archive/docs.zip).
 
 
-## Les grands types de données à représenter
+## Les principaux types de données à représenter
 
 - Une information quantitative mais de surface variable (ex : nombre d'habitants par ville) : [symbole proportionnel](https://www.geoclip.fr/portfolio-item/carte-a-symboles-proportionnels/) : 
 
