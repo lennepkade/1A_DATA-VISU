@@ -211,7 +211,7 @@ Tout d'abord, nous connaissons la production à l'hectare selon le type de cultu
 - Nom : 'prod_totale'
 - La formule à saisir est :  
 ```
-$area/10000 *  "production_prod"$
+$area/10000 *  "production_prod"
 ```
 
 Mais attention, dans le cas présenté, la colonne contenant la production à l'hectare par type de culture s'appelle *"production_prod"*, pensez à bien utiliser l'outil d'aide à la création d'expression pour retrouver le nom de votre colonne dans la partie `Champs et valeurs` (image ci-dessus)
