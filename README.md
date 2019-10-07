@@ -8,7 +8,7 @@ L'objectif de ce TD est de vous faire produire des cartes selon la sémiologie g
 
 ## Télécharger les données
 
-Les données utilisées pour ce TD sont disponibles à cette adresse : [https://github.com/nkarasiak/1A_DATA-VISU/archive/docs.zip](https://github.com/nkarasiak/1A_DATA-VISU/archive/docs.zip).
+Les données utilisées pour ce TD sont disponibles à cette adresse : [https://github.com/nkarasiak/1A_DATA-VISU/archive/data.zip](https://github.com/nkarasiak/1A_DATA-VISU/archive/data.zip).
 
 
 ## Les principaux types de données à représenter
