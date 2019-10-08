@@ -13,37 +13,37 @@ Les données utilisées pour ce TD sont disponibles à cette adresse : [https://
 
 ## Les principaux types de données à représenter
 
-- Une information quantitative mais de surface variable (ex : nombre d'habitants par ville) : [symbole proportionnel](https://www.geoclip.fr/portfolio-item/carte-a-symboles-proportionnels/) : 
+- Une information quantitative mais de surface variable (ex : nombre d'habitants par ville) : [symbole proportionnel](https://www.geoclip.fr/portfolio-item/carte-a-symboles-proportionnels/) :
 
 ![Représenter une information quantitative de surface variable](figures/example_proportion.jpg)
 
-- Une information quantitative mais relative à la surface (ex : nombre d'habitants par km/2) : [carte choroplèthe](https://fr.wikipedia.org/wiki/Carte_choropl%C3%A8the) ou une densité de motifs (traits de plus en plus fins par exemple) : 
+- Une information quantitative mais relative à la surface (ex : nombre d'habitants par km/2) : [carte choroplèthe](https://fr.wikipedia.org/wiki/Carte_choropl%C3%A8the) ou une densité de motifs (traits de plus en plus fins par exemple) :
 
 ![Combinaison de symboles proportionnels avec un dégradé de couleurs pour les informations quantitatives relatives à la surface](figures/example_proportion_and_cho.jpg)
 
-- Une information qualitative sur une surface : des couleurs ou des motifs différents : 
+- Une information qualitative sur une surface : des couleurs ou des motifs différents :
 
 ![Différentes régions de la France](figures/examples_regions.jpg)
 
-Une information qualitative sur un point : un symbôle/icône. : 
+Une information qualitative sur un point : un symbôle/icône. :
 
 ![Aperçu de la sémiologie ponctuelle de la carte de l'IGN](figures/examples_ponctuel_ign.png){height=100px}
 
 
 # Créer un nouveau projet QGIS
 
-Quand vous lancez QGIS, commencez par créer un nouveau projet : 
+Quand vous lancez QGIS, commencez par créer un nouveau projet :
 `Projet > Nouveau`.
 
 ## Choisir une projection adaptée
 
-Par défaut votre projet utilise le système de référence mondial WGS-84 (celui du GPS), nom de code EPSG:4326. Dans QGIS, le système de référence du projet est toujours affiché en bas à droite de la fenêtre de QGIS. Vous pouvez donc vérifier votre projection : 
+Par défaut votre projet utilise le système de référence mondial WGS-84 (celui du GPS), nom de code EPSG:4326. Dans QGIS, le système de référence du projet est toujours affiché en bas à droite de la fenêtre de QGIS. Vous pouvez donc vérifier votre projection :
 
 ![SCR actuel dans QGIS : EPSG:4326](figures/EPSG4326.png)
 
 Pour regarder les propriétés de votre projet : `Projet > Propriétés`.
 
-Dans l'onglet `SCR` (Système de Coordonnées de Référence), recherchez  `2154`, soit le code EPSG de la projection Lambert-93 qui est la projection officielle en France depuis 2000 et obligatoire pour les données publiques. 
+Dans l'onglet `SCR` (Système de Coordonnées de Référence), recherchez  `2154`, soit le code EPSG de la projection Lambert-93 qui est la projection officielle en France depuis 2000 et obligatoire pour les données publiques.
 
 Si vous voulez en savoir plus sur cette projection, reportez-vous à la [page Wikipedia](https://fr.wikipedia.org/wiki/Projection_conique_conforme_de_Lambert) dédiée.
 
@@ -60,7 +60,7 @@ Une fois ces manipulations effectuées, vous pouvez sauvegarder votre projet dan
 
 Pour ce TD, il est fourni un fichier vectoriel de type polygone où sont numérisées 10 parcelles de l'exploitation de Borret : `parcelles_borret.gpkg`.
 
-En plus des parcelles, 2 fichiers de type `csv` vous sont fournis, ils contiennent des données à intégrer aux parcelles  : 
+En plus des parcelles, 2 fichiers de type `csv` vous sont fournis, ils contiennent des données à intégrer aux parcelles  :
 
  - `assolement_2018.csv`, la liste par parcelle de ce qui a été récolté en 2018
  - `production.csv`, la production (qt/ha) par type de culture
@@ -88,7 +88,7 @@ Clic droit > Propriété de la couche > Étiquettes
 
 Dans étiquettes simples, choisissez le champs content l'identifiant de la parcelle. N'hésitez pas à changer la police, à ajouter un ombre pour mieux voir la police par exemple.
 
-Si vous voulez ajouter en plus du numéro de la parcelle, un texte qui indique 'Parcelle n', il vous faut alors **concatener** deux textes comme suit : 
+Si vous voulez ajouter en plus du numéro de la parcelle, un texte qui indique 'Parcelle n', il vous faut alors **concatener** deux textes comme suit :
 
 ```
 
@@ -107,11 +107,11 @@ Attention à bien mettre des guillemets simples pour ajouter du texte, les doubl
 
 Dans l'onglet symbologie, sélectionner dans la liste Catégorisé.
 
-La colonne servant coloriser les parcelles à est la même que pour les étiquettes.
+La colonne servant à coloriser les parcelles est la même que pour celle pour nommer les étiquettes.
 
 Ensuite la ligne `symbole` vous permet de modifier comment votre polygone est représenté (style et largeur du contour de votre polygone par exemple).
 
-Puis vous pouvez choisir une palette de couleurs. Comme nous sommes sur une information qualitative, nous prendrons que des couleurs sélectionnées aléatoirement.
+Puis vous pouvez choisir une palette de couleurs. Comme nous sommes sur une information qualitative, nous prendrons que des couleurs sélectionnées aléatoirement. Vous pouvez désormais cliquer sur le bouton `classer` en bas de la fenêtre.
 
 Le rendu est le suivant :  
 
@@ -119,7 +119,7 @@ Le rendu est le suivant :
 
 ### Amélioration de la carte
 
-Pour améliorer la beauté de votre carte, vous pouvez par exemple : 
+Pour améliorer la beauté de votre carte, vous pouvez par exemple :
 
 - ajouter de la transparence à la couleur de chaque parcelle,
 - changer le ligne de contour du polygone,
@@ -149,7 +149,7 @@ Vous pouvez déplacer le contenu de la carte en utilisant l'icône avec les flê
 
 
 
-Enfin, si l'emprise de votre carte ne vous satisfait pas, le plus simple est de retourner dans la fenêtre principal de Qgis puis : 
+Enfin, si l'emprise de votre carte ne vous satisfait pas, le plus simple est de retourner dans la fenêtre principal de Qgis puis :
 clic droit sur les parcelles, et choisissez "Zommer sur la couche".
 
 À partir Qgis 3.8, sélectionner votre carte puis cliquer sur l'icône `Set Map Extent to Match Main Canvas Extent` pour que votre carte utilise la même emprise que l'emprise de la fenêtre principale de QGIS.
@@ -158,7 +158,7 @@ Dans les version inférieures de Qgis, dans `Propriétés de l'objet`, déployer
 
 ![Étendue de la carte QGIS](figures/composer_mapExtent.png).
 
-Vous pouvez ajouter plusieurs textes : 
+Vous pouvez ajouter plusieurs textes :
 - un titre
 - les crédits (qui a fait la carte et avec des données de quelles sources ?).
 
@@ -208,7 +208,7 @@ Pour réaliser cette carte, il faut représenter la donnée d'une façon moins c
 
 ![Cet outil facilite l'écriture d'expressions](figures/ajout_champ_production.png)
 
-Tout d'abord, nous connaissons la production à l'hectare selon le type de culture. Il faut donc créer un nouveau champ nommé 'production', `Clic droit > ouvrir la table d'attributs` puis : 
+Tout d'abord, nous connaissons la production à l'hectare selon le type de culture. Il faut donc créer un nouveau champ nommé 'production', `Clic droit > ouvrir la table d'attributs` puis :
 
 - Ouvrir la calculatrice de champ (ctrl+i pour les geeks)
 - Cocher `Créer un nouveau champ`
@@ -232,7 +232,7 @@ Vous pouvez afficher plusieurs informations dans une étiquette comme le type d'
 
 #### Afficher le type et la production en étiquette
 
-Dans l'étiquette, saisir l'expression suivante : 
+Dans l'étiquette, saisir l'expression suivante :
 ```
 `concat("assolement_2018_type",'\n', "prod_totale",'qt')`
 ```
@@ -306,6 +306,6 @@ En 2018, la parcelle n [% "id_parcelle" %] a produit  [% "prod_totale" %] qt de 
 
 ```
 
-Votre atlas sera donc composé de 10 cartes, dont l'une sera du style : 
+Votre atlas sera donc composé de 10 cartes, dont l'une sera du style :
 
 ![Exemple de l'atlas de la parcelle n3](figures/map_atlas.png)
