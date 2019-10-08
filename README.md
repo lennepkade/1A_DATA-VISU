@@ -124,7 +124,7 @@ Pour améliorer la beauté de votre carte, vous pouvez par exemple :
 - ajouter de la transparence à la couleur de chaque parcelle,
 - changer le ligne de contour du polygone,
 - changer de police.
-- choisir l'endoirt où sera placé votre texte (`étiquette > position > décalé du centroïd` par exemple)
+- choisir l'endroit où sera placé votre texte (`étiquette > position > décalé du centroïd` par exemple)
 
 ![Affichage des parcelles amélioré](figures/parcelle_style.png)
 
