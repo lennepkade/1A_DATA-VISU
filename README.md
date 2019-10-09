@@ -185,7 +185,7 @@ Pour regarder les informations contenues dans ces fichiers, vous pouvez ouvrir l
 
 Pour lier des données entre elles, il nous faut un champs (colonne) en commun, puis nous pouvons faire ce qu'on appelle une jointure à partir de notre fichier parcelles : `Clic droit > Propriété de la couche > Jointure`.
 
-Une fois que vous avez trouver la colonne en commun entre le fichier parcelle et le fichier csv, vous pouvez faire la jointure. Une fois cette dernière faite, ouvrez la table attributaire du fichier `parcelles` et vérifier qu'il contient bien une nouvelle colonne bien remplie. Bravo, vous venez de faire votre première jointure :). Il ne vous reste plus qu'à faire la deuxième désormais !
+Une fois que vous avez trouvé la colonne en commun entre le fichier parcelle et le fichier csv, vous pouvez faire la jointure. Une fois cette dernière faite, ouvrez la table attributaire du fichier `parcelles` et vérifier qu'il contient bien une nouvelle colonne bien remplie. Bravo, vous venez de faire votre première jointure :). Il ne vous reste plus qu'à faire la deuxième désormais !
 
 ## Sauvegarder la jointure
 
