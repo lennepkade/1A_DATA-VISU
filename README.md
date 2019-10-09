@@ -92,7 +92,7 @@ Si vous voulez ajouter en plus du numéro de la parcelle, un texte qui indique '
 
 ```
 
-`concat('Parcelle n',"id_parcelle")`
+concat('Parcelle n',"id_parcelle")
 
 ```
 
@@ -234,7 +234,7 @@ Vous pouvez afficher plusieurs informations dans une étiquette comme le type d'
 
 Dans l'étiquette, saisir l'expression suivante :
 ```
-`concat("assolement_2018_type",'\n', "prod_totale",'qt')`
+concat("assolement_2018_type",'\n', "prod_totale",'qt')
 ```
 
 Pour vous familiariser avec l'outil, vous pouvez remplacer la production totale par la production à l'ha et afficher une étiquette sous la forme : `Maïs : 89qt/ha`
