@@ -63,7 +63,7 @@ Pour ce TD, il est fourni un fichier vectoriel de type polygone où sont numéri
 En plus des parcelles, 2 fichiers de type `csv` vous sont fournis, ils contiennent des données à intégrer aux parcelles  :
 
  - `assolement_2018.csv`, la liste par parcelle de ce qui a été récolté en 2018
- - `production.csv`, la production (qt/ha) par type de culture
+ - `rendement.csv`, le rendement (qt/ha) par type de culture
 
 
 # Représenter les parcelles
@@ -174,7 +174,7 @@ N'oubliez pas de sauvegarder votre projet qui contiendra désormais votre premi�
 
 Gràce au fichier `assolement_2018.csv`, nous savons quel type de culture à été récolté pour chaque parcelle.
 
-Grâce au fichier `production.csv`, nous connaissons la production en quintaux/ha pour chaque type de culture.
+Grâce au fichier `rendement.csv`, nous connaissons la rendement en quintaux/ha pour chaque type de culture.
 
 Il faut donc désormais ajouter des colonnes à notre fichier `parcelles.gpkg` pour pouvoir afficher les cultures, et la production totale de la parcelle. Mais pas question de le faire en les saisissant à la main !
 
@@ -194,9 +194,9 @@ Les jointures sont en fait un lien entre votre fichier vectoriel et les fichiers
 Pour sauvegarder et donc figer la jointure, vous pouvez faire un clic droit sur votre couche, puis `Exporter > Sauvegarder les entités sous...`.
 
 
-## Cartographier la production à l'hectare
+## Cartographier le rendement à l'hectare
 
-Réaliser une carte qui montre en étiquette le type de culture, et en couleur (quantitatif) la production à l'hectare, c'est ce qu'on appelle une carte choroplèthe.
+Réaliser une carte qui montre en étiquette le type de culture, et en couleur (quantitatif) la rendement à l'hectare, c'est ce qu'on appelle une carte choroplèthe.
 
 ## Cartographier la production totale par parcelle
 
@@ -215,10 +215,10 @@ Tout d'abord, nous connaissons la production à l'hectare selon le type de cultu
 - Nom : 'prod_totale'
 - La formule à saisir est :  
 ```
-$area/10000 *  "production_prod"
+$area/10000 *  "rendement_rendement"
 ```
 
-Mais attention, dans le cas présenté, la colonne contenant la production à l'hectare par type de culture s'appelle *"production_prod"*, pensez à bien utiliser l'outil d'aide à la création d'expression pour retrouver le nom de votre colonne dans la partie `Champs et valeurs` (image ci-dessus)
+Mais attention, dans le cas présenté, la colonne contenant la production à l'hectare par type de culture s'appelle *"rendement_rendement"*, pensez à bien utiliser l'outil d'aide à la création d'expression pour retrouver le nom de votre colonne dans la partie `Champs et valeurs` (image ci-dessus)
 
 `$area` représente la surface du polygone selon l'unité de mesure de la projection utilisée, comme nous utilisons du Lambert-93 (EPSG:2154), l'unité est le mètre. Donc pour calculer en hectare, nous divisons par 10 000 la surface que nous multiplions aussi par la production à l'hectare.
 
@@ -262,7 +262,7 @@ Pour légender les symboles proportionnels, on utilise ce qu'on appelle une lég
 
 ![Générer la légende des cercles proportionnels](figures/legend_cercle.png){height=50px}
 
-Enfin, vous pouvez à nouveau faire une carte en combinant à la fois l'information ponctuelle (ici la production totale de la parcelle) avec la production à l'hectare selon le type de culture (exemple ci-dessous).
+Enfin, vous pouvez à nouveau faire une carte en combinant à la fois l'information ponctuelle (ici la production totale de la parcelle) avec le rendement à l'hectare selon le type de culture (exemple ci-dessous).
 
 ![Générer la légende des cercles proportionnels](figures/exemple_proportionnel.png)
 
