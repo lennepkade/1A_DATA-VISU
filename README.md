@@ -168,7 +168,11 @@ N'oubliez pas de sauvegarder votre projet qui contiendra désormais votre premi�
 
 Grâce au fichier `assolement_2018.csv`, nous savons quel type de culture a été récolté pour chaque parcelle.
 
+<<<<<<< HEAD
 Grâce au fichier `rendement.csv`, nous connaissons le rendement en quintaux/ha de chaque type de culture.
+=======
+Grâce au fichier `rendement.csv`, nous connaissons la rendement en quintaux/ha pour chaque type de culture.
+>>>>>>> upstream/master
 
 Il faut donc désormais ajouter ces informations à notre fichier `parcelles.gpkg` pour pouvoir afficher les cultures et leur rendement. Mais pas question de le faire en les saisissant à la main !
 
@@ -190,10 +194,16 @@ Les jointures sont en fait un lien entre votre fichier vectoriel et les fichiers
 Pour sauvegarder et donc figer la jointure, vous pouvez faire un clic droit sur votre couche, puis `Exporter > Sauvegarder les entités sous...`.
 
 
+<<<<<<< HEAD
 ## Cartographier le rendement
 
 Réaliser une carte qui montre en étiquette le type de culture (assolement 2018) ainsi que le rendement (en qt/ha) à partir d'un aplat de couleur. Cela correspond à une carte choroplèthe. Du point de vue de la sémiologie graphique, qu'elle est la *variable visuelle* a utiliser ?
 
+=======
+## Cartographier le rendement à l'hectare
+
+Réaliser une carte qui montre en étiquette le type de culture, et en couleur (quantitatif) la rendement à l'hectare, c'est ce qu'on appelle une carte choroplèthe.
+>>>>>>> upstream/master
 
 ## Cartographier la production totale par parcelle
 
@@ -214,10 +224,17 @@ Nous connaissons le rendement par type de culture. Nous allons créer un nouveau
 - Type : réel
 - La formule à saisir est :  
 ```
+<<<<<<< HEAD
 $area/10000 *  "rendement"
 ```
 
 Mais attention, dans le cas présenté, la colonne contenant le rendement (production à l'hectare) par type de culture s'appelle *"rendement"*. Pensez à bien utiliser l'outil d'aide à la création d'expression pour retrouver le nom de votre colonne dans la partie `Champs et valeurs` (cf. image ci-dessus).
+=======
+$area/10000 *  "rendement_rendement"
+```
+
+Mais attention, dans le cas présenté, la colonne contenant la production à l'hectare par type de culture s'appelle *"rendement_rendement"*, pensez à bien utiliser l'outil d'aide à la création d'expression pour retrouver le nom de votre colonne dans la partie `Champs et valeurs` (image ci-dessus)
+>>>>>>> upstream/master
 
 `$area` représente une fonction qui permet de calculer la surface du polygone selon l'unité de mesure de la projection utilisée. Comme nous utilisons du Lambert-93 (EPSG:2154), l'unité est le mètre (ou mètre carré pour des surfaces). Donc, pour calculer en hectare, nous divisons la surface en m2 par 10 000 que nous multiplions aussi par le rendement pour obtenir la production totale.
 
@@ -259,7 +276,11 @@ Pour légender les symboles proportionnels, on utilise ce qu'on appelle une lég
 
 ![Générer la légende des cercles proportionnels](figures/legend_cercle.png){height=50px}
 
+<<<<<<< HEAD
 Vous pouvez à nouveau faire une carte en combinant à la fois l'information ponctuelle (ici la production totale de la parcelle) avec le rendement selon le type de culture (exemple ci-dessous - erreur à corriger sur la légende des parcelles).
+=======
+Enfin, vous pouvez à nouveau faire une carte en combinant à la fois l'information ponctuelle (ici la production totale de la parcelle) avec le rendement à l'hectare selon le type de culture (exemple ci-dessous).
+>>>>>>> upstream/master
 
 ![Générer la légende des cercles proportionnels](figures/exemple_proportionnel.png)
 
