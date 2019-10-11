@@ -169,9 +169,13 @@ N'oubliez pas de sauvegarder votre projet qui contiendra désormais votre premi�
 Grâce au fichier `assolement_2018.csv`, nous savons quel type de culture a été récolté pour chaque parcelle.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Grâce au fichier `rendement.csv`, nous connaissons le rendement en quintaux/ha de chaque type de culture.
 =======
 Grâce au fichier `rendement.csv`, nous connaissons la rendement en quintaux/ha pour chaque type de culture.
+>>>>>>> upstream/master
+=======
+Grâce au fichier `rendement.csv`, nous connaissons le rendement en quintaux/ha de chaque type de culture.
 >>>>>>> upstream/master
 
 Il faut donc désormais ajouter ces informations à notre fichier `parcelles.gpkg` pour pouvoir afficher les cultures et leur rendement. Mais pas question de le faire en les saisissant à la main !
@@ -183,7 +187,7 @@ Pour regarder les informations contenues dans ces fichiers, vous pouvez ouvrir l
 
 Pour lier des données entre elles, il faut d'abord identifier un champs (colonne) commun dans la table des parcelles et dans les fichiers importés. Ensuite, nous pouvons réaliser ce qu'on appelle une *jointure* (attributaire ici) en se positionnant sur notre fichier de parcelles : `Clic droit > Propriété de la couche > Jointure`.
 
-Une fois que vous avez trouvé la colonne en commun entre le fichier parcelle et le fichier csv, vous pouvez faire la jointure. Ensuite, ouvrez la table attributaire du fichier `parcelles` et vérifiez qu'il contient bien une nouvelle colonne bien remplie (l'assolement ou le rendement). 
+Une fois que vous avez trouvé la colonne en commun entre le fichier parcelle et le fichier csv, vous pouvez faire la jointure. Ensuite, ouvrez la table attributaire du fichier `parcelles` et vérifiez qu'il contient bien une nouvelle colonne bien remplie (l'assolement ou le rendement).
 
 Bravo ! Vous venez de réaliser votre première jointure :). Il ne vous reste plus qu'à faire la deuxième désormais !
 
@@ -195,21 +199,27 @@ Pour sauvegarder et donc figer la jointure, vous pouvez faire un clic droit sur 
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> upstream/master
 ## Cartographier le rendement
 
-Réaliser une carte qui montre en étiquette le type de culture (assolement 2018) ainsi que le rendement (en qt/ha) à partir d'un aplat de couleur. Cela correspond à une carte choroplèthe. Du point de vue de la sémiologie graphique, qu'elle est la *variable visuelle* a utiliser ?
+Réaliser une carte qui montre en étiquette le type de culture (assolement 2018) ainsi que le rendement (en qt/ha) à partir d'un aplat de couleur. Cela correspond à une carte choroplèthe. Du point de vue de la sémiologie graphique, qu'elle est la *variable visuelle* à utiliser ?
 
+<<<<<<< HEAD
 =======
 ## Cartographier le rendement à l'hectare
 
 Réaliser une carte qui montre en étiquette le type de culture, et en couleur (quantitatif) la rendement à l'hectare, c'est ce qu'on appelle une carte choroplèthe.
+>>>>>>> upstream/master
+=======
 >>>>>>> upstream/master
 
 ## Cartographier la production totale par parcelle
 
 L'objectif de cette partie est de réaliser une autre carte qui montre la production totale par parcelle. Connaissant le rendement de chaque culture, cette production totale peut être calculée en multipliant la valeur du rendement par la surface des parcelles.
 
-Pour réaliser cette carte correctement, il faut utiliser une représentation par symbole proportionnel. Une carte choroplèthe ne convient pas car elle ne va pas permettre d'exprimer les variations de quantité (production). Seuls un ordre et une différence seront perçus mais pas une proportionnalité. 
+Pour réaliser cette carte correctement, il faut utiliser une représentation par symbole proportionnel. Une carte choroplèthe ne convient pas car elle ne va pas permettre d'exprimer les variations de quantité (production). Seuls un ordre et une différence seront perçus mais pas une proportionnalité.
 
 
 ### Créer un champ et calculer la production totale
@@ -223,17 +233,24 @@ Nous connaissons le rendement par type de culture. Nous allons créer un nouveau
 - Nom : 'prod_totale'
 - Type : réel
 - La formule à saisir est :  
+
 ```
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> upstream/master
 $area/10000 *  "rendement"
 ```
 
 Mais attention, dans le cas présenté, la colonne contenant le rendement (production à l'hectare) par type de culture s'appelle *"rendement"*. Pensez à bien utiliser l'outil d'aide à la création d'expression pour retrouver le nom de votre colonne dans la partie `Champs et valeurs` (cf. image ci-dessus).
+<<<<<<< HEAD
 =======
 $area/10000 *  "rendement_rendement"
 ```
 
 Mais attention, dans le cas présenté, la colonne contenant la production à l'hectare par type de culture s'appelle *"rendement_rendement"*, pensez à bien utiliser l'outil d'aide à la création d'expression pour retrouver le nom de votre colonne dans la partie `Champs et valeurs` (image ci-dessus)
+>>>>>>> upstream/master
+=======
 >>>>>>> upstream/master
 
 `$area` représente une fonction qui permet de calculer la surface du polygone selon l'unité de mesure de la projection utilisée. Comme nous utilisons du Lambert-93 (EPSG:2154), l'unité est le mètre (ou mètre carré pour des surfaces). Donc, pour calculer en hectare, nous divisons la surface en m2 par 10 000 que nous multiplions aussi par le rendement pour obtenir la production totale.
@@ -256,11 +273,11 @@ Pour vous familiariser avec l'outil, vous pouvez remplacer la production totale 
 
 #### Générer les cercles proportionnels
 
-Cette étape permet de déterminer la taille d'un symbole en fonction de la valeur d'un champ. Dans notre cas, nous voulons faire varier la taille d'un cercle en fonction de la production totale de la parcelle. 
+Cette étape permet de déterminer la taille d'un symbole en fonction de la valeur d'un champ. Dans notre cas, nous voulons faire varier la taille d'un cercle en fonction de la production totale de la parcelle.
 
 ![Faire varier en taille en fonction d'une expression](figures/taille_fonction_champ.png)
 
-Nous devons d'abord choisir une taille minimale et maximale pour afficher les symboles en faisant en sorte qu'ils ne soient ni trop petit, ni trop grand pour la carte. Ici, les valeurs de production totale varient d'environ 200 à plus de 1000 quintaux ce qui est trop important pour la carte (que ce soit en cm ou en pixels). Nous choisissons de les diviser par 10 pour pouvoir fixer une taille de symbole raisonnable. Inutile de créer un nouveau champ : il suffit simplement, dans le calcul de la taille (clic sur le bouton de droite, `Editer`), de le préciser dans une simple expression. 
+Nous devons d'abord choisir une taille minimale et maximale pour afficher les symboles en faisant en sorte qu'ils ne soient ni trop petit, ni trop grand pour la carte. Ici, les valeurs de production totale varient d'environ 200 à plus de 1000 quintaux ce qui est trop important pour la carte (que ce soit en cm ou en pixels). Nous choisissons de les diviser par 10 pour pouvoir fixer une taille de symbole raisonnable. Inutile de créer un nouveau champ : il suffit simplement, dans le calcul de la taille (clic sur le bouton de droite, `Editer`), de le préciser dans une simple expression.
 
 Ainsi, dans la fenêtre de calcul d'expression, quand vous éditez la taille du cercle (fenêtre symbologie du centroide), vous retrouverez votre nom de champ dans la partie `Champs et valeurs` comme montré ci-dessous.
 
@@ -272,14 +289,18 @@ A présent, il faut générer la légende des cercles proportionnels. Pour cela,
 
 ![Définissez votre légende proportionnelle](figures/legend_propor.png)
 
-Pour légender les symboles proportionnels, on utilise ce qu'on appelle une légende repliée. Il est nécessaire de définir la taille des classes de manière manuelle car nous avons volontairement divisé par 10 la taille des cercles. Il y a donc une différence d'un facteur 10 entre la valeur de taille et la valeur d'étiquette à préciser (relative à la production totale). 
+Pour légender les symboles proportionnels, on utilise ce qu'on appelle une légende repliée. Il est nécessaire de définir la taille des classes de manière manuelle car nous avons volontairement divisé par 10 la taille des cercles. Il y a donc une différence d'un facteur 10 entre la valeur de taille et la valeur d'étiquette à préciser (relative à la production totale).
 
 ![Générer la légende des cercles proportionnels](figures/legend_cercle.png){height=50px}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Vous pouvez à nouveau faire une carte en combinant à la fois l'information ponctuelle (ici la production totale de la parcelle) avec le rendement selon le type de culture (exemple ci-dessous - erreur à corriger sur la légende des parcelles).
 =======
 Enfin, vous pouvez à nouveau faire une carte en combinant à la fois l'information ponctuelle (ici la production totale de la parcelle) avec le rendement à l'hectare selon le type de culture (exemple ci-dessous).
+>>>>>>> upstream/master
+=======
+Vous pouvez à nouveau faire une carte en combinant à la fois l'information ponctuelle (ici la production totale de la parcelle) avec le rendement selon le type de culture (exemple ci-dessous - erreur à corriger sur la légende des parcelles).
 >>>>>>> upstream/master
 
 ![Générer la légende des cercles proportionnels](figures/exemple_proportionnel.png)
